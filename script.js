@@ -102,7 +102,7 @@ window.addEventListener("scroll", () => {
 const reviews = [
 {
 name: "Rahul Kumar",
-text: "Best biryani in Muzaffarpur. Rich aroma and amazing taste."
+text: "Best biryani in Samastipur. Rich aroma and amazing taste."
 },
 {
 name: "Ayesha Khan",
