@@ -3,103 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biryani Bistro | Authentic Flavors</title>
+    <title>Biryani Bistro | Royal Indian Dining & Fast Food</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body class="bg-stone-900 text-stone-100 scroll-smooth">
+<body class="bg-stone-950 text-stone-100 scroll-smooth">
 
-    <nav class="fixed w-full z-50 bg-stone-950/80 backdrop-blur-md border-b border-stone-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-serif font-bold tracking-wide text-amber-500">Biryani Bistro</a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase">
-                <a href="#home" class="hover:text-amber-500 transition-colors">Home</a>
-                <a href="#menu" class="hover:text-amber-500 transition-colors">Our Menu</a>
-                <a href="#about" class="hover:text-amber-500 transition-colors">About</a>
-                <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-stone-950/90 backdrop-blur-md border-b border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
+            <!-- Theme-Adapted SVG Logo based on image.png -->
+            <a href="#" class="flex items-center gap-3 group">
+                <svg class="w-14 h-14 text-amber-500 drop-shadow-[0_0_8px_rgba(245,158,11,0.3)] transition-transform group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 10C50 10 25 35 25 75C25 110 40 125 40 155C40 180 65 190 100 190C135 190 160 180 160 155C160 125 175 110 175 75C175 35 150 10 100 10Z" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M100 35C90 45 75 55 75 75C75 90 85 92 85 105C85 112 78 115 100 115C122 115 115 112 115 105C115 92 125 90 125 75C125 55 110 45 100 35Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M100 23V35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="100" cy="22" r="2" fill="currentColor"/>
+                    <text x="100" y="80" font-family="'Playfair Display', serif" font-weight="bold" font-size="24" fill="currentColor" text-anchor="middle">BB</text>
+                    <text x="100" y="142" font-family="'Playfair Display', serif" font-weight="900" font-size="15" fill="currentColor" text-anchor="middle" letter-spacing="2">BIRYANI</text>
+                    <text x="100" y="160" font-family="'Poppins', sans-serif" font-weight="500" font-size="11" fill="currentColor" text-anchor="middle" letter-spacing="4">BISTRO</text>
+                    <path d="M75 173C85 178 100 171 100 171C100 171 115 178 125 173" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <div class="hidden sm:block">
+                    <span class="block font-serif text-xl font-bold tracking-wider text-amber-500 leading-none">BIRYANI</span>
+                    <span class="block text-xs font-light tracking-[0.3em] text-stone-400 mt-1">BISTRO</span>
+                </div>
+            </a>
+
+            <!-- Menu Links -->
+            <div class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-widest uppercase">
+                <a href="#home" class="text-stone-400 hover:text-amber-500 transition-colors">Home</a>
+                <a href="#signature" class="text-stone-400 hover:text-amber-500 transition-colors">Signature Dishes</a>
+                <a href="#instagram" class="text-stone-400 hover:text-amber-500 transition-colors">Social Feed</a>
+                <a href="#find-us" class="text-stone-400 hover:text-amber-500 transition-colors">Locate Us</a>
             </div>
-            <a href="https://wa.me/918603304412" target="_blank" class="bg-amber-500 text-stone-950 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
+
+            <!-- Header Action Button -->
+            <a href="https://wa.me/918603304412" target="_blank" class="bg-amber-500 text-stone-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/10">
                 Order via WhatsApp
             </a>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=1200');">
-        <div class="max-w-4xl mx-auto text-center px-6 pt-20">
-            <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Aromatic & Authentic</span>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold mt-6 mb-6 text-stone-100 leading-tight">
+    <!-- Hero Banner Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center pt-24" style="background-image: linear-gradient(rgba(12,10,9,0.8), rgba(12,10,9,0.9)), url('https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=1600');">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <span class="text-amber-500 uppercase tracking-[0.25em] text-xs font-semibold bg-amber-500/10 px-5 py-2 rounded-full border border-amber-500/20 inline-block">Taste of Heritage</span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black mt-6 mb-6 text-stone-100 leading-tight">
                 Experience Royal <br><span class="text-amber-500">Biryani Perfection</span>
             </h1>
-            <p class="text-stone-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Slow-cooked to perfection with premium long-grain basmati rice, hand-selected royal spices, and tender succulent meats.
+            <p class="text-stone-400 text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+                Slow-cooked authentic Biryani alongside classic starters and fast favorites, curated to bring royal flavors directly to your home.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#menu" class="w-full sm:w-auto border border-stone-700 hover:border-amber-500 text-stone-300 hover:text-amber-500 px-8 py-3.5 rounded-full font-medium transition-all">
-                    Explore Menu
+                <!-- Target menu.pdf for Menu Exploration -->
+                <a href="menu.pdf" target="_blank" class="w-full sm:w-auto bg-stone-900 border border-stone-800 hover:border-amber-500 text-stone-200 hover:text-amber-500 px-8 py-4 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2">
+                    📄 Explore Menu (PDF)
                 </a>
-                <a href="https://wa.me/918603304412" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.981 0c3.187.001 6.185 1.24 8.44 3.497 2.256 2.258 3.493 5.258 3.493 8.448 0 6.587-5.352 11.935-11.924 11.935-1.996-.001-3.957-.502-5.709-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.85-6.892-1.84-1.842-4.29-2.856-6.888-2.858-5.441 0-9.865 4.371-9.869 9.743-.001 1.761.488 3.479 1.417 5.021L1.24 22.76l4.996-1.298z"/></svg>
-                    Order on WhatsApp
+                <a href="https://wa.me/918603304412" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-xl font-medium text-sm transition-all shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-2">
+                    💬 Order on WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="py-24 bg-stone-950">
+    <!-- Signature Dishes Section (4 Items) -->
+    <section id="signature" class="py-24 bg-stone-900/40 border-t border-stone-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-xl mx-auto mb-16">
-                <h2 class="text-4xl font-serif font-bold text-stone-100 mb-4">Our Signature Dishes</h2>
-                <p class="text-stone-400">Fresh ingredients, traditional slow-cooked 'Dum' style technique, delivered hot to your doorstep.</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-100 mb-4">Our Signature Dishes</h2>
+                <p class="text-stone-400 text-sm">Four pillars of authentic culinary mastery crafted with high-grade hand-ground masalas.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden group hover:border-amber-500/40 transition-all duration-300">
-                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://unsplash.com/photos/a-black-bowl-filled-with-food-on-top-of-a-table-OT-Wlz2Mn7w');"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-serif text-xl font-bold text-stone-100">Chicken Biryani</h3>
-                            <span class="text-amber-500 font-semibold text-lg">₹190</span>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dish 1: Chicken Biryani -->
+                <div class="bg-stone-900 border border-stone-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=500');"></div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-stone-100 mb-2">Chicken Biryani</h3>
+                            <p class="text-stone-400 text-xs leading-relaxed mb-4">Fragrant premium long-grain Basmati rice steamed in layers with rich spices and tender, marinated chicken pieces.</p>
                         </div>
-                        <p class="text-stone-400 text-sm mb-6 leading-relaxed">Fragrant basmati rice layered with juicy chicken and the iconic slow-cooked potato.</p>
-                        <a href="https://wa.me/918603304412?text=I'm%20interested%20in%20ordering%20Kolkata%20Shahi%20Chicken%20Biryani" target="_blank" class="block text-center w-full bg-stone-800 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl font-medium text-sm transition-all">
+                        <a href="https://wa.me/918603304412?text=Hi%20Biryani%20Bistro,%20I'd%20like%20to%20order%20your%20Signature%20Chicken%20Biryani" target="_blank" class="block text-center w-full bg-stone-950 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl text-xs font-semibold tracking-wider transition-all">
                             Order via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden group hover:border-amber-500/40 transition-all duration-300">
-                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600');"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-serif text-xl font-bold text-stone-100">Mutton Dum Biryani</h3>
-                            <span class="text-amber-500 font-semibold text-lg">₹280</span>
+                <!-- Dish 2: Mutton Biryani -->
+                <div class="bg-stone-900 border border-stone-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=500');"></div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-stone-100 mb-2">Mutton Biryani</h3>
+                            <p class="text-stone-400 text-xs leading-relaxed mb-4">Traditional heritage recipe utilizing premium choice cut mutton cooked in clay pots to absolute melt-in-the-mouth perfection.</p>
                         </div>
-                        <p class="text-stone-400 text-sm mb-6 leading-relaxed">Traditional spicy kacchi yakhni style biryani with ultra-tender marinated mutton pieces.</p>
-                        <a href="https://wa.me/918603304412?text=I'm%20interested%20in%20ordering%20Hyderabadi%20Mutton%20Dum%20Biryani" target="_blank" class="block text-center w-full bg-stone-800 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl font-medium text-sm transition-all">
+                        <a href="https://wa.me/918603304412?text=Hi%20Biryani%20Bistro,%20I'd%20like%20to%20order%20your%20Signature%20Mutton%20Biryani" target="_blank" class="block text-center w-full bg-stone-950 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl text-xs font-semibold tracking-wider transition-all">
                             Order via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-stone-900 border border-stone-800 rounded-2xl overflow-hidden group hover:border-amber-500/40 transition-all duration-300">
-                    <div class="h-56 bg-cover bg-center" style="background-image: url('https://www.istockphoto.com/photo/tandoori-meats-gm518522197-49379588?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fassorted-kabab-%2526-tandoori&utm_term=assorted+kabab+%26+tandoori%3A%3A%3A%3A71a1020f-effd-4102-bfe0-ddf001f5b663');"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-serif text-xl font-bold text-stone-100">Kabab & Tandoori Delicasies</h3>
-                            <span class="text-amber-500 font-semibold text-lg">Check Menu</span>
+                <!-- Dish 3: Kabab & Tandoori Delicacies -->
+                <div class="bg-stone-900 border border-stone-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=500');"></div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-stone-100 mb-2">Kabab & Tandoori</h3>
+                            <p class="text-stone-400 text-xs leading-relaxed mb-4">Fiery, charcoal-grilled tandoor appetizers marinated over hours in signature spice-infused yogurt blends.</p>
                         </div>
-                        <p class="text-stone-400 text-sm mb-6 leading-relaxed">Rich selection of authentic grilled kebabs and traditional tandoori specialties, prepared with aromatic spices and fresh ingredients.</p>
-                        <a href="https://wa.me/918603304412?text=I'm%20interested%20in%20ordering%20Special%20Paneer%20Tikka%20Biryani" target="_blank" class="block text-center w-full bg-stone-800 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl font-medium text-sm transition-all">
+                        <a href="https://wa.me/918603304412?text=Hi%20Biryani%20Bistro,%20I'd%20like%20to%20order%20some%20Kabab%20and%20Tandoori%20Delicacies" target="_blank" class="block text-center w-full bg-stone-950 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl text-xs font-semibold tracking-wider transition-all">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dish 4: Chinese Fast Food -->
+                <div class="bg-stone-900 border border-stone-800/80 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-amber-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=500');"></div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-stone-100 mb-2">Chinese Fast Food</h3>
+                            <p class="text-stone-400 text-xs leading-relaxed mb-4">Savory, high-heat wok tossed noodles, fried rice varieties, and classic street style appetizers packed with punchy flavors.</p>
+                        </div>
+                        <a href="https://wa.me/918603304412?text=Hi%20Biryani%20Bistro,%20I'd%20like%20to%20order%20from%20the%20Chinese%20Fast%20Food%20menu" target="_blank" class="block text-center w-full bg-stone-950 hover:bg-amber-500 hover:text-stone-950 text-stone-300 py-2.5 rounded-xl text-xs font-semibold tracking-wider transition-all">
                             Order via WhatsApp
                         </a>
                     </div>
@@ -108,78 +143,97 @@
         </div>
     </section>
 
-    <section id="about" class="py-24 bg-stone-900 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative">
-                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 opacity-30 blur-lg"></div>
-                <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=600" alt="Kitchen" class="relative rounded-2xl border border-stone-800 object-cover w-full h-[400px]">
-            </div>
-            <div>
-                <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase">Our Story</span>
-                <h2 class="text-4xl font-serif font-bold text-stone-100 mt-2 mb-6">Crafted with Heritage, Served with Love</h2>
-                <p class="text-stone-400 mb-6 leading-relaxed">
-                    At Biryani Bistro, we celebrate the rich culinary inheritance of slow-cooked delicacies. Every batch is prepared individually under careful observation to lock in the true cloud of royal aromatics.
-                </p>
-                <div class="grid grid-cols-2 gap-6 border-t border-stone-800 pt-6">
-                    <div>
-                        <h4 class="text-amber-500 font-bold text-2xl font-serif">100%</h4>
-                        <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Fresh Ingredients</p>
-                    </div>
-                    <div>
-                        <h4 class="text-amber-500 font-bold text-2xl font-serif">Traditional</h4>
-                        <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Dum Handi Style</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-stone-950 border-t border-stone-800">
+    <!-- Social Showcase Section (Instagram Grid) -->
+    <section id="instagram" class="py-24 bg-stone-950 border-t border-stone-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
-                    <h2 class="text-4xl font-serif font-bold text-stone-100 mb-6">Visit & Order</h2>
-                    <p class="text-stone-400 mb-8">Have any custom catering requests or want a quick delivery? Ping us directly on WhatsApp, or trace our physical location map link below.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4">
-                            <span class="p-3 bg-stone-900 border border-stone-800 rounded-xl text-amber-500">
-                                📱
-                            </span>
-                            <div>
-                                <p class="text-xs text-stone-500 uppercase font-semibold">WhatsApp Order Line</p>
-                                <a href="https://wa.me/918603304412" class="text-stone-200 hover:text-amber-500 font-medium">+91 86033 04412</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <span class="p-3 bg-stone-900 border border-stone-800 rounded-xl text-amber-500">
-                                📍
-                            </span>
-                            <div>
-                                <p class="text-xs text-stone-500 uppercase font-semibold">Find Our Bistro</p>
-                                <a href="https://maps.app.goo.gl/eakDMdDiFZauPgVBA?g_st=ic" target="_blank" class="text-stone-200 hover:text-amber-500 font-medium underline">Google Maps Location</a>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase">Social Feed</span>
+                    <h2 class="text-3xl font-serif font-bold text-stone-100 mt-2">Follow Our Journey</h2>
                 </div>
+                <a href="https://www.instagram.com/biryanibistros?igsh=bzR3OGIxaTZrcmox" target="_blank" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-amber-500 hover:text-amber-400 transition-colors">
+                    📸 @biryanibistros ↗
+                </a>
+            </div>
 
-                <div class="bg-stone-900 border border-stone-800 rounded-2xl p-4 flex flex-col justify-between h-[300px]">
-                    <div class="w-full h-full rounded-xl bg-stone-950 flex flex-col items-center justify-center text-center p-6 border border-stone-800">
-                        <span class="text-3xl mb-2">🗺️</span>
-                        <h4 class="font-serif font-semibold text-lg text-stone-200 mb-1">Interactive Location Map</h4>
-                        <p class="text-xs text-stone-500 max-w-xs mb-4">Click below to trace the exact route details via the provided navigation link.</p>
-                        <a href="https://maps.app.goo.gl/eakDMdDiFZauPgVBA?g_st=ic" target="_blank" class="bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-semibold px-4 py-2 rounded-lg transition-all">
-                            Open Map Location
-                        </a>
-                    </div>
-                </div>
+            <!-- Curated Visual Instagram Grid Visual Layout -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="https://www.instagram.com/biryanibistros?igsh=bzR3OGIxaTZrcmox" target="_blank" class="relative group aspect-square overflow-hidden rounded-xl bg-stone-900 border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=400" alt="Instagram Post" class="object-cover w-full h-full opacity-70 group-hover:opacity-40 group-hover:scale-105 transition-all duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold tracking-wider text-amber-500">View Post ↗</div>
+                </a>
+                <a href="https://www.instagram.com/biryanibistros?igsh=bzR3OGIxaTZrcmox" target="_blank" class="relative group aspect-square overflow-hidden rounded-xl bg-stone-900 border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=400" alt="Instagram Post" class="object-cover w-full h-full opacity-70 group-hover:opacity-40 group-hover:scale-105 transition-all duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold tracking-wider text-amber-500">View Post ↗</div>
+                </a>
+                <a href="https://www.instagram.com/biryanibistros?igsh=bzR3OGIxaTZrcmox" target="_blank" class="relative group aspect-square overflow-hidden rounded-xl bg-stone-900 border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=400" alt="Instagram Post" class="object-cover w-full h-full opacity-70 group-hover:opacity-40 group-hover:scale-105 transition-all duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold tracking-wider text-amber-500">View Post ↗</div>
+                </a>
+                <a href="https://www.instagram.com/biryanibistros?igsh=bzR3OGIxaTZrcmox" target="_blank" class="relative group aspect-square overflow-hidden rounded-xl bg-stone-900 border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?q=80&w=400" alt="Instagram Post" class="object-cover w-full h-full opacity-70 group-hover:opacity-40 group-hover:scale-105 transition-all duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold tracking-wider text-amber-500">View Post ↗</div>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-stone-950 py-8 border-t border-stone-900 text-center text-xs text-stone-600">
-        <p>&copy; 2026 Biryani Bistro. All rights reserved.</p>
+    <!-- Map & Interaction Gateway Section -->
+    <section id="find-us" class="py-24 bg-stone-900/30 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase">Location & Hours</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-100 mt-2 mb-6">Drop By Our Bistro</h2>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-8">We are serving delicious hot food batches daily. Stop by for an authentic sit-down dinner or route an order directly to your door.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <span class="text-xl">📍</span>
+                            <div>
+                                <h4 class="text-stone-200 font-semibold text-sm">Our Address</h4>
+                                <p class="text-stone-400 text-xs mt-1">Click the interactive map terminal to map precise navigation directions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <h4 class="text-stone-200 font-semibold text-sm">Direct Contact</h4>
+                                <a href="tel:+918603304412" class="text-stone-400 hover:text-amber-500 text-xs mt-1 block">+91 86033 04412</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rate us on Google Option -->
+                    <div class="p-6 bg-stone-900 border border-stone-800 rounded-2xl">
+                        <h4 class="font-serif font-bold text-stone-100 text-lg mb-2">Loved the Taste?</h4>
+                        <p class="text-stone-400 text-xs mb-4">Your support helps our family bistro grow. Take half a minute to rate your dining experience with us!</p>
+                        <a href="https://maps.app.goo.gl/eakDMdDiFZauPgVBA?g_st=ic" target="_blank" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition-all">
+                            ⭐ Rate Us On Google
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embedded Widget Sandbox -->
+                <div class="lg:col-span-7 h-[400px] w-full rounded-2xl overflow-hidden border border-stone-800 p-2 bg-stone-900">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.4371901115853!2d86.1481183!3d23.6245053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f42337d1d45767%3A0xe96561cf264d2938!2sBiryani%20Bistro!5e0!3m2!1sen!2sin!4v1719210000000!5m2!1sen!2sin" 
+                        class="w-full h-full rounded-xl opacity-80 invert-[0.9] hue-rotate-180 contrast-125"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 py-12 border-t border-stone-900 text-center">
+        <p class="text-xs text-stone-600 tracking-wider">&copy; 2026 Biryani Bistro. All Rights Reserved.</p>
     </footer>
 
 </body>
