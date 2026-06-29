@@ -1,72 +1,94 @@
-// =======================
-// Sticky Navbar
-// =======================
+/* ==========================
+   PRELOADER
+========================== */
+
+window.addEventListener("load", () => {
+
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(() => {
+
+        preloader.style.opacity = "0";
+
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500);
+
+    }, 1000);
+
+});
+
+
+/* ==========================
+   STICKY HEADER
+========================== */
+
+const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
 
     if (window.scrollY > 50) {
-        header.style.background = "rgba(0,0,0,0.95)";
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.4)";
+
+        header.classList.add("scrolled");
+
     } else {
-        header.style.background = "rgba(0,0,0,0.85)";
-        header.style.boxShadow = "none";
+
+        header.classList.remove("scrolled");
+
     }
+
 });
 
 
-// =======================
-// Smooth Scroll
-// =======================
+/* ==========================
+   SMOOTH SCROLL
+========================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
     anchor.addEventListener("click", function (e) {
 
-        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
 
-        document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
                 behavior: "smooth"
             });
-    });
-});
-
-
-// =======================
-// Fade-In Animation
-// =======================
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
 
         }
 
     });
 
-}, {
-    threshold: 0.15
-});
-
-document.querySelectorAll("section, .card").forEach(el => {
-
-    el.classList.add("hidden");
-
-    observer.observe(el);
-
 });
 
 
-// =======================
-// Active Menu Highlight
-// =======================
+/* ==========================
+   MOBILE MENU
+========================== */
+
+const toggleBtn = document.querySelector(".mobile-toggle");
+const navbar = document.getElementById("navbar");
+
+if (toggleBtn) {
+
+    toggleBtn.addEventListener("click", () => {
+
+        navbar.classList.toggle("mobile-open");
+
+    });
+
+}
+
+
+/* ==========================
+   ACTIVE MENU LINKS
+========================== */
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar ul li a");
+const navLinks = document.querySelectorAll("#navbar a");
 
 window.addEventListener("scroll", () => {
 
@@ -74,20 +96,24 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 150;
 
         if (pageYOffset >= sectionTop) {
+
             current = section.getAttribute("id");
+
         }
 
     });
 
     navLinks.forEach(link => {
 
-        link.classList.remove("active");
+        link.classList.remove("active-link");
 
         if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
+
+            link.classList.add("active-link");
+
         }
 
     });
@@ -95,85 +121,234 @@ window.addEventListener("scroll", () => {
 });
 
 
-// =======================
-// Testimonial Slider
-// =======================
+/* ==========================
+   TESTIMONIAL SLIDER
+========================== */
 
-const reviews = [
-{
-name: "Rahul Kumar",
-text: "Best biryani in Samastipur. Rich aroma and amazing taste."
-},
-{
-name: "Ayesha Khan",
-text: "Authentic flavour and excellent service."
-},
-{
-name: "Mohammad Ali",
-text: "Highly recommended. One of the finest biryanis."
-}
-];
+const reviews = document.querySelectorAll(".review-card");
 
-let currentReview = 0;
+let reviewIndex = 0;
 
-const reviewBox = document.querySelector(".review");
+if (reviews.length > 0) {
 
-if (reviewBox) {
+    reviews.forEach((review, index) => {
 
-setInterval(() => {
+        if (index !== 0) {
 
-    currentReview++;
+            review.style.display = "none";
 
-    if (currentReview >= reviews.length) {
-        currentReview = 0;
-    }
+        }
 
-    reviewBox.innerHTML = `
-    ★★★★★
-    <p>${reviews[currentReview].text}</p>
-    <h4>${reviews[currentReview].name}</h4>
-    `;
+    });
 
-}, 5000);
+    setInterval(() => {
+
+        reviews[reviewIndex].style.display = "none";
+
+        reviewIndex++;
+
+        if (reviewIndex >= reviews.length) {
+
+            reviewIndex = 0;
+
+        }
+
+        reviews[reviewIndex].style.display = "block";
+
+    }, 5000);
 
 }
 
 
-// =======================
-// Back To Top Button
-// =======================
+/* ==========================
+   SCROLL REVEAL ANIMATION
+========================== */
 
-const topButton = document.createElement("button");
+const revealElements = document.querySelectorAll(
+    ".product-card, .gallery-item, .stat, .about-content, .about-image, .review-card"
+);
 
-topButton.innerHTML = "↑";
+const revealOnScroll = () => {
 
-topButton.style.position = "fixed";
-topButton.style.right = "20px";
-topButton.style.bottom = "20px";
-topButton.style.width = "55px";
-topButton.style.height = "55px";
-topButton.style.border = "none";
-topButton.style.borderRadius = "50%";
-topButton.style.background = "#c8a96a";
-topButton.style.color = "#000";
-topButton.style.fontSize = "22px";
-topButton.style.cursor = "pointer";
-topButton.style.display = "none";
-topButton.style.zIndex = "999";
+    revealElements.forEach(element => {
 
-document.body.appendChild(topButton);
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+
+
+/* ==========================
+   COUNTER ANIMATION
+========================== */
+
+const counters = document.querySelectorAll(".stat h3");
+
+let counterStarted = false;
+
+function startCounter() {
+
+    if (counterStarted) return;
+
+    counters.forEach(counter => {
+
+        const text = counter.innerText;
+
+        const number = parseInt(text);
+
+        if (!isNaN(number)) {
+
+            let count = 0;
+
+            const speed = number / 80;
+
+            const update = () => {
+
+                count += speed;
+
+                if (count < number) {
+
+                    counter.innerText = Math.floor(count);
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    counter.innerText = text;
+
+                }
+
+            };
+
+            update();
+
+        }
+
+    });
+
+    counterStarted = true;
+
+}
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 400) {
-        topButton.style.display = "block";
-    } else {
-        topButton.style.display = "none";
+    const stats = document.querySelector(".stats-box");
+
+    if (!stats) return;
+
+    const position = stats.getBoundingClientRect().top;
+
+    if (position < window.innerHeight - 100) {
+
+        startCounter();
+
     }
 
 });
 
-topButton.addEventListener("click", () => {
+
+/* ==========================
+   GALLERY LIGHTBOX
+========================== */
+
+const galleryImages = document.querySelectorAll(".gallery-item img");
+
+galleryImages.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        const lightbox = document.createElement("div");
+
+        lightbox.classList.add("lightbox");
+
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img src="${img.src}">
+        `;
+
+        document.body.appendChild(lightbox);
+
+        document.querySelector(".close-lightbox")
+            .addEventListener("click", () => {
+
+                lightbox.remove();
+
+            });
+
+        lightbox.addEventListener("click", (e) => {
+
+            if (e.target === lightbox) {
+
+                lightbox.remove();
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ==========================
+   PARALLAX HERO
+========================== */
+
+window.addEventListener("scroll", () => {
+
+    const hero = document.querySelector(".hero");
+
+    if (hero) {
+
+        const scroll = window.pageYOffset;
+
+        hero.style.backgroundPositionY =
+            scroll * 0.4 + "px";
+
+    }
+
+});
+
+
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+
+const topBtn = document.createElement("button");
+
+topBtn.className = "back-to-top";
+
+topBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        topBtn.classList.add("show-top");
+
+    } else {
+
+        topBtn.classList.remove("show-top");
+
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
 
     window.scrollTo({
         top: 0,
@@ -183,59 +358,59 @@ topButton.addEventListener("click", () => {
 });
 
 
-// =======================
-// Hero Parallax
-// =======================
+/* ==========================
+   FADE-IN EFFECTS
+========================== */
 
-window.addEventListener("scroll", () => {
+const observer = new IntersectionObserver(entries => {
 
-    const hero = document.querySelector(".hero");
+    entries.forEach(entry => {
 
-    if (hero) {
+        if (entry.isIntersecting) {
 
-        let offset = window.pageYOffset;
+            entry.target.classList.add("animate");
 
-        hero.style.backgroundPositionY = offset * 0.5 + "px";
+        }
 
-    }
+    });
+
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll(
+    ".product-card, .gallery-item, .stat, .review-card"
+).forEach(item => {
+
+    observer.observe(item);
 
 });
 
 
-// =======================
-// Page Loaded Animation
-// =======================
+/* ==========================
+   FOOTER YEAR
+========================== */
 
-window.addEventListener("load", () => {
+const footerYear = document.getElementById("year");
 
-    document.body.style.opacity = "1";
+if (footerYear) {
 
-});
-
-
-// =======================
-// Mobile Menu Toggle
-// =======================
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".navbar ul");
-
-if (hamburger) {
-
-hamburger.addEventListener("click", () => {
-
-    navMenu.classList.toggle("open");
-
-});
+    footerYear.innerText =
+        new Date().getFullYear();
 
 }
 
 
-// =======================
-// Console Signature
-// =======================
+/* ==========================
+   CONSOLE BRANDING
+========================== */
 
 console.log(
-"%cBiryani Bistro Premium Website",
-"color:#c8a96a;font-size:18px;font-weight:bold"
-);// Biryani Bistro
+"%cBiryani Bistro Deluxe Website",
+"font-size:18px;color:#D4AF37;font-weight:bold;"
+);
+
+console.log(
+"%cDesigned with Luxury & Flavour",
+"font-size:14px;color:white;"
+);
