@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Important Pages
+Allow: /index.html
+Allow: /menu/
+
+# Block system files
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://biryanibistro.online/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 5
